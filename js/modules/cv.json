@@ -1,0 +1,62 @@
+
+{
+    "name": "Aissam Yekhlef",
+    "email": "aissamyekhlef@gmail.com",
+    "phone": "+213667178824",
+    "social_media": {
+        "whatsapp": "",
+        "telegram": "",
+        "facebook": ""
+    },
+    "sections": {
+        "aboutMe": {
+            "section_name": "About Me",
+            "section_content": "Hiiiiiiiiiiiiiii Aissam, I am a web developer love coding and making things live </br > I like JavaScript and PHP as technologies </br > I have experiance with Laravel and VueJS </br > Currently, I am working with a Great team <a href='http://swissdidata.com' target='_blank'>DiData team</a>"
+        },
+        "education": {
+            "section_name": "Education",
+            "section_content": ""
+        },
+        "experience":{
+            "section_name": "Experience",
+            "section_content": "",
+            "experiences": [
+                {
+                    "employerName": "DiData",
+                    "dateStart": "03 January 2021",
+                    "dateEnd": "15 September 2021",
+                    "jobTitle": "Full-stack web developer at DiData",
+                    "description": "work as part-time backend developer remotely at <a href='https://swissdidata.com'>DiData</a>"
+                },
+                {
+                    "employerName": "DiData Frontend team",
+                    "dateStart": "15 November 2021",
+                    "dateEnd": "Current",
+                    "jobTitle": "Front-End web developer at DiData",
+                    "description": "full-time Front-End developer remotely at <a href='https://swissdidata.com'>DiData</a>"
+                }
+            ]
+        },
+        "skills": [
+            {"skill": "JavaScript"},
+            {"skill": "Vue.js"},
+            {"skill": "Nuxt.js"},
+            {"skill": "Vue3"},
+            {"skill": "Vuex"},
+            {"skill": "vuetify"},
+            {"skill": "PHP"},
+            {"skill": "Laravel"},
+            {"skill": "Bootstrap"},
+            {"skill": "Git & Github"},
+            {"skill": "Heroku"},
+            {"skill": "Java"},
+            {"skill": "Python"},
+            {"skill": "MySQL"},
+            {"skill": "PostgreSQL"},
+            {"skill": "Web Services"},
+            {"skill": "CSS"},
+            {"skill": "Pinia"}
+        ]
+    }
+
+}

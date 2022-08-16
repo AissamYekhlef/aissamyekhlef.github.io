@@ -11,7 +11,7 @@
     "sections": {
         "aboutMe": {
             "section_name": "About Me",
-            "section_content": "Hiiiiiiiiiiiiiii Aissam, I am a web developer love coding and making things live </br > I like JavaScript and PHP as technologies </br > I have experiance with Laravel and VueJS </br > Currently, I am working with a Great team <a href='http://swissdidata.com' target='_blank'>DiData team</a>"
+            "section_content": "Hii, it's Aissam, I am a web developer love coding and making things live </br > I like JavaScript and PHP as technologies </br > I have experiance with Laravel and VueJS </br > Currently, I am working with a Great team <a href='http://swissdidata.com' target='_blank'>DiData team</a>"
         },
         "education": {
             "section_name": "Education",
@@ -45,7 +45,7 @@
                     "description": "work as part-time backend developer remotely at <a href='https://swissdidata.com'>DiData</a>"
                 },
                 {
-                    "employerName": "DiData Frontend team",
+                    "employerName": "DiData",
                     "dateStart": "15 November 2021",
                     "dateEnd": "Current",
                     "jobTitle": "Front-End web developer at DiData",

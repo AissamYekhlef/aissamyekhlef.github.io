@@ -15,7 +15,23 @@
         },
         "education": {
             "section_name": "Education",
-            "section_content": ""
+            "section_content": "",
+            "educations": [
+                {
+                    "school": "University of Mila - Algeria", 
+                    "dateStart": "Sept 2016", 
+                    "dateEnd": "Sept 2021",
+                    "educationTitle": "Master's Degree of Science in Computer Science",
+                    "description": "Study Computer Science and web architecture"
+                },
+                {
+                    "school": "Udacity.com", 
+                    "dateStart": "Sept 2019", 
+                    "dateEnd": "May 2020",
+                    "educationTitle": "Full-stack developer",
+                    "description": "Study at Udacity <br />Nano Degree as Full-stack development (Python, JavaScript)"
+                }
+            ]
         },
         "experience":{
             "section_name": "Experience",

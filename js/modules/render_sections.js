@@ -49,43 +49,28 @@ const renderExperienceSection = function ({experiences}) {
     section.innerHTML = htmlString
 }
 
-// const renderEducationSection = function ({educations}) {
-//     if (!Array.isArray(experiences)) {
-//         alert("Invalid experience section -experiences must be array-")
-//     }
+const renderEducationSection = function ({educations}) {
+    if (!Array.isArray(educations)) {
+        alert("Invalid education section -educations must be array-")
+    }
 
-//     const section = document.getElementById('education')
-//     let htmlString = '<h2 class="heading">Education</h2>'
-//         // htmlString +=  `<div id="experience-timeline">`
+    const section = document.getElementById('education')
+    let htmlString = '<h2 class="heading">Education</h2>'
 
+    for (let index = 0; index < educations.length; index++) {
+        const {school, dateStart, dateEnd, educationTitle, description} =  educations[index]
+        htmlString +=   `<div class="education-block">`
+        htmlString +=       `<h3>${school}</h3>`
+        htmlString +=       `<span class="education-date">${dateStart} - ${dateEnd}</span>`
+        htmlString +=       `<h4>${educationTitle}</h4>`
+        htmlString +=       `<p>${description}</p>`
+        htmlString +=   `</div></div></div>`
+    }
 
-//     for (let index = 0; index < educations.length; index++) {
-//         const {title, dateStart, dateEnd, jobTitle, description} =  educations[index]
-//         htmlString +=   `<div class="education-block">`
-//         htmlString +=       `<h3>${title}</h3>`
-//         htmlString +=       `<span class="education-date">${dateStart} - ${dateEnd}</span>`
-//         htmlString +=       `<h4>${Title}</h4>`
-//         htmlString +=       `<p>${description}</p>`
-//         htmlString +=   `</div></div></div>`
-//     }
+    htmlString +=  `</div>`
 
-//     htmlString +=  `</div>`
-
-//     section.innerHTML = htmlString
-
-//     // TODO render section here
-//     // <h2 class="heading">Education</h2>
-//     // <div class="education-block">
-//     //     <h3>University of Mila - Algeria</h3>
-//     //     <span class="education-date">Sept 2016 - Sept 2021</span>
-//     //     <h4>Master's Degree of Science in Computer Science</h4>
-//     //     <p>
-//     //         Study Computer Science and web architecture
-//     //     </p>
-//     // </div>
-
-//     section.innerHTML = aboutMeText
-// }
+    section.innerHTML = htmlString
+}
 
 
 
@@ -93,5 +78,5 @@ export {
     renderSkillsSection,
     renderAboutMeSection,
     renderExperienceSection,
-    // renderEducationSection
+    renderEducationSection
 }

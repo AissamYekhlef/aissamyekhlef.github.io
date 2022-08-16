@@ -3,6 +3,7 @@ import {
     renderSkillsSection,
     renderAboutMeSection,
     renderExperienceSection,
+    renderEducationSection,
 } from "./render_sections.js"
 
 
@@ -22,7 +23,7 @@ renderExperienceSection({experiences: CV.sections.experience.experiences});
 
 //TODO 
 // Render education section
-// renderExperienceSection({experiences: CV.sections.experience.experiences});
+renderEducationSection({educations: CV.sections.education.educations});
 
 //TODO 
 // Render projects section

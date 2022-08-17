@@ -30,6 +30,13 @@
                     "dateEnd": "May 2020",
                     "educationTitle": "Full-stack developer",
                     "description": "Study at Udacity <br />Nano Degree as Full-stack development (Python, JavaScript)"
+                },
+                {
+                    "school": "Udemy.com", 
+                    "dateStart": "Sept 2018", 
+                    "dateEnd": "Current",
+                    "educationTitle": "Full-stack developer",
+                    "description": "Udemy courses <br />Full-stack web development technologies (Vue3, JavaScript, Nuxt, Node)"
                 }
             ]
         },

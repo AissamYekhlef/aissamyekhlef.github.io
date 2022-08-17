@@ -72,11 +72,38 @@ const renderEducationSection = function ({educations}) {
     section.innerHTML = htmlString
 }
 
+const renderProjectsSection = function ({projects}) {
+    if (!Array.isArray(projects)) {
+        alert("Invalid projects section -projects must be array-")
+    }
+
+    const section = document.getElementById('projects')
+    let htmlString = `<h2 class="heading">Projects</h2><div class="container"><div class="row">`
+
+    for (let index = 0; index < projects.length; index++) {
+        const project =  projects[index]
+        htmlString +=   `<div class="project shadow-large">`
+        htmlString +=       `<div class="project-image"><img src="${project.pictureUrl}"  width="300" height="300" /></div>`
+        htmlString +=       `<div class="project-info">`
+        htmlString +=       `<h3>${project.name}</h3>`
+        htmlString +=       `<p>Description: ${project.description}</p>`
+        htmlString +=       `<p>Technologies used: ${project.technologies.join(', ')}</p>`
+        htmlString +=       `<a class="btn-rounded-white" style="color: blue;" href="${project.url}" target="_blank">Project Code</a class="btn-rounded-white">`
+        htmlString +=       `<a class="btn-rounded-white" style="color: blue;" href="${project.demoUrl}" target="_blank">Project Demo</a>`
+        htmlString +=   `</div></div>`
+    }
+
+    htmlString +=  `</div>`
+
+    section.innerHTML = htmlString
+}
+
 
 
 export {
     renderSkillsSection,
     renderAboutMeSection,
     renderExperienceSection,
-    renderEducationSection
+    renderEducationSection,
+    renderProjectsSection
 }

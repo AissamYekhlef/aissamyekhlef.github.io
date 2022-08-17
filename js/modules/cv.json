@@ -53,6 +53,51 @@
                 }
             ]
         },
+        "projects":{
+            "section_name": "Projects",
+            "section_content": "",
+            "projects": [
+                {
+                    "name": "MilaShop",
+                    "url": "https://github.com/AissamYekhlef/milashop",
+                    "demoUrl": "https://github.com/AissamYekhlef/milashop/blob/main/public/assets/images/screenshots",
+                    "pictureUrl": "https://github.com/AissamYekhlef/milashop/blob/main/public/assets/images/screenshots/products-home.JPG?raw=true",
+                    "date": "June 2021",
+                    "description": " MilaShop is an online store can users add products for sale, rent or exchange",
+                    "technologies": [
+                        "Laravel",
+                        "Bootstrap"
+                    ]
+                },
+                {
+                    "name": "LibExams",
+                    "url": "https://github.com/AissamYekhlef/libexams",
+                    "demoUrl": "http://libexams.herokuapp.com/",
+                    "pictureUrl": "images/project.jpg",
+                    "date": "January 2021",
+                    "description": "LibExams is a project we have created to centralize the exams in one place and can users (students) share it between them.",
+                    "technologies": [
+                        "Laravel",
+                        "Bootstrap"
+                    ]
+                },
+                {
+                    "name": "More Projects on github",
+                    "url": "https://github.com/AissamYekhlef?tab=repositories",
+                    "demoUrl": "https://github.com/AissamYekhlef?tab=repositories",
+                    "pictureUrl": "images/project.jpg",
+                    "date": "January 2021",
+                    "description": "My open Source projects and my study's projects for all the stack of learning form the university and the online learning",
+                    "technologies": [
+                        "Laravel",
+                        "Bootstrap",
+                        "Vue.js",
+                        "Nuxt.js",
+                        "Rest API"
+                    ]
+                }
+            ]
+        },
         "skills": [
             {"skill": "JavaScript"},
             {"skill": "Vue.js"},

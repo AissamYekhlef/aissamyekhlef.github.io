@@ -46,17 +46,17 @@
             "experiences": [
                 {
                     "employerName": "DiData",
-                    "dateStart": "03 January 2021",
-                    "dateEnd": "15 September 2021",
-                    "jobTitle": "Full-stack web developer at DiData",
-                    "description": "work as part-time backend developer remotely at <a href='https://swissdidata.com'>DiData</a>"
-                },
-                {
-                    "employerName": "DiData",
                     "dateStart": "15 November 2021",
                     "dateEnd": "Current",
                     "jobTitle": "Front-End web developer at DiData",
                     "description": "full-time Front-End developer remotely at <a href='https://swissdidata.com'>DiData</a>"
+                },
+                {
+                    "employerName": "DiData",
+                    "dateStart": "03 January 2021",
+                    "dateEnd": "15 September 2021",
+                    "jobTitle": "Full-stack web developer at DiData",
+                    "description": "work as part-time backend developer remotely at <a href='https://swissdidata.com'>DiData</a>"
                 }
             ]
         },
@@ -74,6 +74,20 @@
                     "technologies": [
                         "Laravel",
                         "Bootstrap"
+                    ]
+                },
+                {
+                    "name": "Wasafat Fares - وصفات طبخ الشاف فارس",
+                    "url": "https://github.com/AissamYekhlef/wasafat-fares-api",
+                    "demoUrl": "https://play.google.com/store/apps/details?id=com.mobidal.wasafatfares",
+                    "pictureUrl": "images/wasafat-fares-app.webp",
+                    "date": "October 2021",
+                    "description": "Wasafat Fares is a CMS(Content Management System) for dishes as API for an Android App plus 10K+ downloads on play store",
+                    "technologies": [
+                        "Laravel",
+                        "TailwindCSS",
+                        "RESTful API",
+                        "Android"
                     ]
                 },
                 {
@@ -98,9 +112,13 @@
                     "technologies": [
                         "Laravel",
                         "Bootstrap",
+                        "JavaScript",
                         "Vue.js",
                         "Nuxt.js",
-                        "Rest API"
+                        "Vuetify",
+                        "Rest API",
+                        "PHP",
+                        "Python"
                     ]
                 }
             ]
@@ -114,9 +132,13 @@
             {"skill": "vuetify"},
             {"skill": "PHP"},
             {"skill": "Laravel"},
+            {"skill": "Unit Test"},
             {"skill": "Bootstrap"},
             {"skill": "Git & Github"},
             {"skill": "Heroku"},
+            {"skill": "Docker"},
+            {"skill": "cPanel"},
+            {"skill": "Hosting"},
             {"skill": "Java"},
             {"skill": "Python"},
             {"skill": "MySQL"},

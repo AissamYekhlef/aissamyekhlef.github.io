@@ -86,8 +86,8 @@ const renderProjectsSection = function ({projects}) {
         htmlString +=       `<div class="project-image"><img src="${project.pictureUrl}"  width="300" height="300" /></div>`
         htmlString +=       `<div class="project-info">`
         htmlString +=       `<h3>${project.name}</h3>`
-        htmlString +=       `<p>Description: ${project.description}</p>`
-        htmlString +=       `<p>Technologies used: ${project.technologies.join(', ')}</p>`
+        htmlString +=       `<p style="text-align: left;"><span style="font-weight: bold">Description</span>: ${project.description}</p>`
+        htmlString +=       `<p style="text-align: left;"><span style="font-weight: bold">Technologies</span>: ${project.technologies.join(', ')}</p>`
         htmlString +=       `<a class="btn-rounded-white" style="color: blue;" href="${project.url}" target="_blank">Project Code</a class="btn-rounded-white">`
         htmlString +=       `<a class="btn-rounded-white" style="color: blue;" href="${project.demoUrl}" target="_blank">Project Demo</a>`
         htmlString +=   `</div></div>`

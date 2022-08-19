@@ -58,12 +58,13 @@ const renderEducationSection = function ({educations}) {
     let htmlString = '<h2 class="heading">Education</h2>'
 
     for (let index = 0; index < educations.length; index++) {
-        const {school, dateStart, dateEnd, educationTitle, description} =  educations[index]
+        const {school, dateStart, dateEnd, educationTitle, description, certificateUrl} =  educations[index]
         htmlString +=   `<div class="education-block">`
         htmlString +=       `<h3>${school}</h3>`
         htmlString +=       `<span class="education-date">${dateStart} - ${dateEnd}</span>`
-        htmlString +=       `<h4>${educationTitle}</h4>`
+        htmlString +=       `<h4>${educationTitle}`
         htmlString +=       `<p>${description}</p>`
+        htmlString +=       `<h4> ${certificateUrl ? '<a href="' + certificateUrl + '" target="_blank"> See certificate </a>' : ''}</h4>`
         htmlString +=   `</div></div></div>`
     }
 

@@ -22,21 +22,24 @@
                     "dateStart": "Sept 2016", 
                     "dateEnd": "Sept 2021",
                     "educationTitle": "Master's Degree of Science in Computer Science",
-                    "description": "Study Computer Science and web architecture"
+                    "description": "Study Computer Science and web architecture",
+                    "certificateUrl": ""
                 },
                 {
                     "school": "Udacity.com", 
                     "dateStart": "Sept 2019", 
                     "dateEnd": "May 2020",
                     "educationTitle": "Full-stack developer",
-                    "description": "Study at Udacity <br />Nano Degree as Full-stack development (Python, JavaScript)"
+                    "description": "Study at Udacity <br />Nano Degree as Full-stack development (Python, JavaScript)",
+                    "certificateUrl": "https://graduation.udacity.com/confirm/KT4VS9JS"
                 },
                 {
                     "school": "Udemy.com", 
                     "dateStart": "Sept 2018", 
                     "dateEnd": "Current",
                     "educationTitle": "Full-stack developer",
-                    "description": "Udemy courses <br />Full-stack web development technologies (Vue3, JavaScript, Nuxt, Node)"
+                    "description": "Udemy courses <br />Full-stack web development technologies (Vue3, JavaScript, Nuxt, Node)",
+                    "certificateUrl": ""
                 }
             ]
         },

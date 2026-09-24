@@ -107,10 +107,13 @@
       background: linear-gradient(145deg, var(--surface), rgba(23,32,51,.65));
       border: 1px solid var(--border); display: flex; flex-direction: column;
     }
-    .certifications {
+    .services {
       min-height: 240px; padding: 28px; border-radius: 18px;
       background: linear-gradient(145deg, var(--surface), rgba(23,32,51,.65));
       border: 1px solid var(--border); display: flex; flex-direction: column;
+    }
+    .section-highlight {
+      background: linear-gradient(145deg, var(--surface), rgba(23,32,51,.65));
     }
     .certification-link { display: flex; justify-content: center; margin-top: 8px; }
     .project h3 { margin: 8px 0; font-size: 1.35rem; }
@@ -146,6 +149,7 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
+        <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -203,7 +207,7 @@
       </div>
     </section>
 
-    <section id="experience">
+    <section id="experience" class="section-highlight">
       <div class="container">
         <div class="section-label">Experience</div>
         <h2>What I've worked on.</h2>
@@ -285,6 +289,39 @@
       </div>
     </section>
 
+    <section id="services" class="section-highlight">
+      <div class="container">
+        <div class="section-label">Services</div>
+        <h2>How I can help.</h2>
+        <div class="skills">
+          <div class="skill-card">
+            <h3>Vue 2 → Vue 3 / Nuxt Migration</h3>
+            <p>Modernizing legacy Vue 2/Nuxt 2 codebases to Vue 3/Nuxt 3 — Composition API, Pinia, Vite — with zero-downtime rollout for live production apps.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Frontend Architecture</h3>
+            <p>Designing scalable component systems, composables and state management patterns for teams that need maintainability as the app grows.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Custom Plugin / Extensibility Systems</h3>
+            <p>Building plugin or module architectures that let internal or client developers extend a platform safely without touching core code.</p>
+          </div>
+          <div class="skill-card">
+            <h3>Complex Data UI (AG Grid & beyond)</h3>
+            <p>Custom grid editors, filtering, sorting and keyboard-driven interactions for data-heavy dashboards and enterprise tools.</p>
+          </div>
+          <div class="skill-card">
+            <h3>API Integration (REST / GraphQL / Laravel)</h3>
+            <p>Wiring frontend to backend cleanly — REST and GraphQL consumption, auth flows, CRUD, file uploads, and Laravel/PHP endpoint work when needed.</p>
+          </div>
+          <div class="skill-card">
+            <h3>AI-Assisted Feature Development</h3>
+            <p>Integrating AI-powered tooling into frontend workflows — natural-language-driven features, prompt-based UIs, and AI-assisted developer tooling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
       <div class="container">
         <div class="section-label">Selected work</div>
@@ -336,7 +373,7 @@
       </div>
     </section>
 
-    <section id="certifications" class="certifications">
+    <section id="certifications" class="section-highlight">
       <div class="container">
         <div class="section-label">Certifications</div>
         <h2>Udacity.</h2>

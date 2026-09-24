@@ -1,259 +1,354 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Portfolio - Aissam Yekhlef</title>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="Aissam Yekhlef — Frontend Engineer specializing in Vue.js, Nuxt.js and TypeScript." />
+	<meta name="theme-color" content="#0b0f19" />
+	<meta property="og:image" content="/images/og-image.png" />
+	<meta property="og:title" content="Aissam Yekhlef — Frontend Engineer - Portfolio" />
+	<meta property="og:description" content="Aissam Yekhlef — Frontend Engineer specializing in Vue.js, Nuxt.js and TypeScript." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="aissamyekhlef.github.io" />
+	<title>Aissam Yekhlef — Frontend Engineer</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #111827;
+      --surface-2: #172033;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --accent: #42b883;
+      --accent-2: #00dc82;
+      --border: rgba(255,255,255,.09);
+      --max: 1120px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 80% 10%, rgba(66,184,131,.12), transparent 28rem),
+        radial-gradient(circle at 10% 40%, rgba(0,220,130,.07), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 40px)); margin: auto; }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(11,15,25,.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      height: 70px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { font-weight: 800; letter-spacing: -.04em; font-size: 1.15rem; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .nav-links a:hover { color: var(--text); }
+    .hero { min-height: 88vh; display: grid; align-items: center; padding: 90px 0 70px; }
+    .eyebrow {
+      color: var(--accent); font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; font-size: .78rem; margin-bottom: 18px;
+    }
+    h1 {
+      font-size: clamp(3.2rem, 8vw, 6.8rem);
+      line-height: .95; letter-spacing: -.075em; margin: 0 0 26px;
+      max-width: 900px;
+    }
+    .hero h1 span { color: var(--accent); }
+    .hero-text { max-width: 760px; color: #c5cad3; font-size: clamp(1.05rem, 2vw, 1.3rem); }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 32px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 18px; border-radius: 10px; border: 1px solid var(--border);
+      font-weight: 700; transition: .2s ease;
+    }
+    .btn.primary { background: var(--accent); color: #06110c; border-color: var(--accent); }
+    .btn:hover { transform: translateY(-2px); }
+    section { padding: 95px 0; border-top: 1px solid var(--border); }
+    .section-label { color: var(--accent); font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; letter-spacing: -.05em; margin: 10px 0 42px; }
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 60px; }
+    .lead { font-size: 1.2rem; color: #d1d5db; }
+    .facts { display: grid; gap: 14px; }
+    .fact { padding: 18px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+    .fact strong { display: block; font-size: 1.4rem; }
+    .fact span { color: var(--muted); font-size: .9rem; }
+    .timeline { display: grid; gap: 26px; }
+    .job {
+      padding: 30px; background: rgba(17,24,39,.72);
+      border: 1px solid var(--border); border-radius: 18px;
+    }
+    .job-top { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .job h3 { margin: 0; font-size: 1.35rem; }
+    .company { color: var(--accent); font-weight: 700; }
+    .date { color: var(--muted); font-size: .9rem; }
+    ul { padding-left: 20px; color: #c8cdd6; }
+    li { margin: 9px 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 22px; }
+    .tag {
+      padding: 7px 11px; border-radius: 999px; background: var(--surface-2);
+      border: 1px solid var(--border); color: #dbe2ea; font-size: .82rem;
+    }
+    .skills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .skill-card {
+      padding: 24px; border: 1px solid var(--border); border-radius: 16px; background: var(--surface);
+    }
+    .skill-card h3 { margin-top: 0; }
+    .skill-card p { color: var(--muted); margin-bottom: 0; }
+    .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .project {
+      min-height: 240px; padding: 28px; border-radius: 18px;
+      background: linear-gradient(145deg, var(--surface), rgba(23,32,51,.65));
+      border: 1px solid var(--border); display: flex; flex-direction: column;
+    }
+    .project h3 { margin: 8px 0; font-size: 1.35rem; }
+    .project p { color: var(--muted); }
+    .project .tags { margin-top: auto; }
+    .contact {
+      text-align: center; padding-bottom: 110px;
+    }
+    .contact p { color: var(--muted); max-width: 650px; margin: -20px auto 30px; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+    footer { border-top: 1px solid var(--border); padding: 28px 0; color: var(--muted); font-size: .85rem; }
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .about-grid, .skills, .projects { grid-template-columns: 1fr; }
+      .hero { min-height: 75vh; padding-top: 60px; }
+      section { padding: 70px 0; }
+    }
+    @media print {
+      nav, .actions, .contact { display: none; }
+      body { background: white; color: black; }
+      section, .job, .skill-card, .project { border-color: #ddd; }
+      .hero { min-height: auto; padding: 30px 0; }
+    }
+  </style>
 </head>
-
 <body>
-    <div id="mobile-menu-open" class="shadow-large">
-        <i class="fa fa-bars" aria-hidden="true"></i>
+  <nav>
+    <div class="container nav-inner">
+      <a class="logo" href="#">Aissam<span>.</span>dev</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+  </nav>
+
+  <main>
+    <header class="hero container">
+      <div>
+        <div class="eyebrow">Frontend Engineer · Vue.js · Nuxt.js · TypeScript, Ai integration</div>
+        <h1>Building robust
+            <br />
+            <span>Vue applications,</span>
+            <br />
+            <span style="color: aqua;">Ai Integration</span>
+        </h1>
+        <p class="hero-text">
+          Frontend Engineer with 5+ years of experience building and modernizing
+          production web applications, with a focus on Vue 3, Nuxt 3, TypeScript,
+          frontend architecture, performance, and extensible enterprise interfaces.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#experience">View experience</a>
+          <a class="btn" href="mailto:aissamyekhlef@gmail.com">Get in touch</a>
+          <a class="btn" href="https://github.com/AissamYekhlef" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
+      </div>
     </header>
-    <!-- End header -->
 
-    <div id="lead">
-        <div id="lead-content">
-            <img src="https://avatars.githubusercontent.com/u/36778606?v=4" alt="Aissam's avatar" height="250" width="250" srcset="" style="margin-bottom: 10px; border-radius: 50%;">
-            <h1>Aissam Yekhlef</h1>
-            <h2>Full-stack web developer</h2>
-            <a href="https://linkedin.com/in/aissam-yekhlef" class="btn-rounded-white" target="_blank">Linkedin Profile</a>
-            <div>@AissamYekhlef</div>
-        </div>
-        <!-- End #lead-content -->
-
-        <div id="lead-overlay"></div>
-
-        <div id="lead-down">
-            <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div>
-        <!-- End #lead-down -->
-    </div>
-    <!-- End #lead -->
-
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="heading">About Me</h2>
-                </div>
-                <div class="col-md-8">
-                    <p id="aboutme_text">
-                        Aissam, I am a web developer love coding and making things live </br >
-                        I like JavaScript and PHP as technologies </br >
-                        I have experiance with Laravel and VueJS </br > 
-                        Currently, I am working with a Great team <a href="http://swissdidata.com" target="_blank">DiData team</a>
-
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End #about -->
-
-    <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="January 2021 – Current">
-                <h3>DiData</h3>
-                <h4>Full-stack web developer at DiData</h4>
-                <p>
-                    work as part-time backend developer remotely at <a href="https://swissdidata.com">DiData</a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- End #experience -->
-
-    <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
-            <h3>University of Mila - Algeria</h3>
-            <span class="education-date">Sept 2016 - Sept 2021</span>
-            <h4>Master's Degree of Science in Computer Science</h4>
-            <p>
-                Study Computer Science and web architecture
+    <section id="about">
+      <div class="container">
+        <div class="section-label">About</div>
+        <h2>Frontend engineering with production ownership.</h2>
+        <div class="about-grid">
+          <div>
+            <p class="lead">
+              I specialize in Vue.js, Nuxt.js and TypeScript, working on complex
+              data-driven applications where maintainability, performance and
+              developer experience matter.
             </p>
-        </div>
-        <!-- End .education-block -->
-
-        <div class="education-block">
-            <h3>Udacity.com</h3>
-            <span class="education-date">Sept 2019 - May 2020</span>
-            <h4>Full-stack developer</h4>
             <p>
-                study at udacity as Full-stack development
+              My experience includes large-scale Vue/Nuxt modernization, reusable
+              component architecture, state management, REST and GraphQL integration,
+              custom plugin systems, performance optimization, code reviews and
+              mentoring. I also have hands-on Laravel/PHP experience when features
+              require work across the frontend and backend.
             </p>
+          </div>
+          <div class="facts">
+            <div class="fact"><strong>5+ years</strong><span>Frontend engineering experience</span></div>
+            <div class="fact"><strong>12+ modules</strong><span>Production application modernization</span></div>
+            <div class="fact"><strong>~95%</strong><span>Migration project ownership (Vue 2 -> Vue 3)</span></div>
+            <div class="fact"><strong>Team mentoring</strong><span>Code reviews and mentoring</span></div>
+          </div>
         </div>
-        <!-- End .education-block -->
-        <!-- Add here some  Educations -->
-    </div>
-    <!-- End #education -->
+      </div>
+    </section>
 
-    <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
-        <div class="container">
-            <div class="row">
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>LibExams</h3>
-                        <p>
-                            LibExams is a project we have created to centralize the exams in one place and can users (students) share it between them.
-                        </p>
-                        <a class="btn-rounded-white" style="color: blue;" href="https://github.com/AissamYekhlef/libexams" target="_blank">Project Code</a class="btn-rounded-white">
-                        <a class="btn-rounded-white" style="color: blue;" href="http://libexams.herokuapp.com/" target="_blank">Project Demo</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="https://github.com/AissamYekhlef/milashop/blob/main/public/assets/images/screenshots/products-home.JPG?raw=true" width="300" height="300" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>MilaShop</h3>
-                        <p>
-                            MilaShop is an online store can users add products for sale, rent or exchange
-                        </p>
-                        <a class="btn-rounded-white" style="color: blue;" href="https://github.com/AissamYekhlef/milashop" target="_blank">Project Code</a class="btn-rounded-white">
-                        <a class="btn-rounded-white" style="color: blue;" href="https://github.com/AissamYekhlef/milashop/blob/main/public/assets/images/screenshots" target="_blank">Project Screenshots</a>
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <div class="project shadow-large">
-                    <div class="project-image">
-                        <img src="images/project.jpg" />
-                    </div>
-                    <!-- End .project-image -->
-                    <div class="project-info">
-                        <h3>More Projects on github</h3>
-                        <p>
-                            My open Source projects and my study's projects for all the stack of learning form the university and the online learning
-                        </p>
-                        <a class="btn-rounded-white" style="color: blue;" href="https://github.com/AissamYekhlef?tab=repositories" target="_blank">Github Repositories</a class="btn-rounded-white">
-                    </div>
-                    <!-- End .project-info -->
-                </div>
-                <!-- End .project -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-label">Experience</div>
+        <h2>What I've worked on.</h2>
+        <div class="timeline">
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Frontend Engineer</h3>
+                <div class="company">DiData</div>
+              </div>
+              <div class="date">Nov 2021 — Present · Algeria</div>
             </div>
-        </div>
-    </div>
-    <!-- End #projects -->
-
-    <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>Vue.js</li>
-            <li>PHP</li>
-            <li>Laravel</li>
-            <li>Bootstrap</li>
-            <li>Git & Github</li>
-            <li>Heroku</li>
-            <li>Java</li>
-            <li>Python</li>
-            <li>MySQL</li>
-        </ul>
-    </div>
-    <!-- End #skills -->
-
-    <div id="contact">
-        <h2>Get in Touch</h2>
-        <div id="contact-form">
-            <form method="POST" action="https://formspree.io/f/moqykkwd">
-                <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-        <!-- End #contact-form -->
-    </div>
-    <!-- End #contact -->
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-5 copyright">
-                    <p>
-                        Copyright &copy; 2021 <a href="https://aissamyekhlef.github.io" target="_blank" rel="noopener noreferrer">Aissam Yekhlef</a>
-                    </p>
-                </div>
-                <div class="col-sm-2 top">
-                    <span id="to-top">
-                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
-                    </span>
-                </div>
-                <div class="col-sm-5 social">
-                    <ul>
-                        <li>
-                            <a href="https://github.com/AissamYekhlef" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://linkedin.com/in/aissam-yekhlef" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/AissamYekhlef" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        </li>
-                        <li>
-                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        </li>
-                    </ul>
-                </div>
+            <ul>
+              <li>Led approximately 95% of a 12+ module production application migration from Vue 2/Nuxt 2 to Vue 3/Nuxt 3 while the platform remained actively in production.</li>
+              <li>Migrated components, pages and routing, middleware, state management, plugins, Vuetify, custom extensions and third-party libraries.</li>
+              <li>Resolved challenges involving removed Vue APIs, Options/Composition API patterns, Proxy-based reactivity, Webpack-to-Vite migration, Vuex-to-Pinia and third-party compatibility.</li>
+              <li>Improved performance with caching, lazy loading and state-managed data reuse, reducing redundant API requests and unnecessary data fetching.</li>
+              <li>Designed reusable Vue 3 + TypeScript architecture using components, composables, shared utilities, state-management patterns and plugin architecture.</li>
+              <li>Helped build a custom plugin system supporting Actions and Modules, allowing client developers to extend the platform with custom logic, UIs, APIs and CRUD workflows.</li>
+              <li>Created VitePress documentation enabling client development teams to build and integrate custom actions and pages.</li>
+              <li>Built and customized complex AG Grid interfaces including custom editors, filtering, sorting, pagination, popups and keyboard interactions.</li>
+              <li>Integrated REST and GraphQL APIs and contributed to Laravel/PHP work including endpoints, authentication, CRUD and file uploads.</li>
+              <li>Reviewed code for 3+ junior and mid-level developers and mentored entry-level developers.</li>
+              <li>Collaborated with senior developers on AI-powered modules designed to help developers create plugins using natural-language prompts.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Vue 3</span><span class="tag">Nuxt 3</span><span class="tag">TypeScript</span>
+              <span class="tag">Pinia</span><span class="tag">Vite</span><span class="tag">AG Grid</span>
+              <span class="tag">GraphQL</span><span class="tag">Laravel</span><span class="tag">Vitest</span>
             </div>
-        </div>
-    </footer>
-    <!-- End footer -->
+          </article>
 
-    <script type="module" src="js/modules/render_page.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Frontend Developer / Intern</h3>
+                <div class="company">DiData</div>
+              </div>
+              <div class="date">Jan 2021 — Oct 2021 · Algeria</div>
+            </div>
+            <ul>
+              <li>Developed and maintained frontend features for a clinical research data management platform.</li>
+              <li>Built Vue.js interfaces and integrated frontend functionality with backend APIs.</li>
+              <li>Worked with senior developers on production architecture, reusable components and state management.</li>
+              <li>Progressed into a full-time frontend engineering role through hands-on work on increasingly complex production features.</li>
+            </ul>
+          </article>
+
+          <article class="job">
+            <div class="job-top">
+              <div>
+                <h3>Freelance Web Developer</h3>
+                <div class="company">Freelance</div>
+              </div>
+              <div class="date">2018 — 2020 · Remote</div>
+            </div>
+            <ul>
+              <li>Developed web applications and websites using JavaScript, PHP, Laravel, HTML and CSS.</li>
+              <li>Implemented responsive interfaces, backend functionality, CRUD workflows and API integrations.</li>
+              <li>Worked directly with clients to understand requirements and deliver functional web solutions.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-label">Skills</div>
+        <h2>My technical toolkit.</h2>
+        <div class="skills">
+          <div class="skill-card"><h3>Frontend</h3><p>Vue.js, Vue 3, Nuxt.js, Nuxt 3, TypeScript, JavaScript ES6+, Composition API, Options API, Vue Router, Pinia, Vuex</p></div>
+          <div class="skill-card"><h3>UI & Data</h3><p>Vuetify, Tailwind CSS, SCSS/Sass, BEM, AG Grid, responsive UI, reusable component architecture</p></div>
+          <div class="skill-card"><h3>Architecture</h3><p>Frontend architecture, component design, composables, state management, plugin systems, custom modules, legacy modernization</p></div>
+          <div class="skill-card"><h3>APIs & Backend</h3><p>REST APIs, GraphQL, Laravel, PHP, authentication, CRUD, file uploads, API endpoint development</p></div>
+          <div class="skill-card"><h3>Testing & Tooling</h3><p>Vitest, Vite, VitePress, Git, GitHub, Bitbucket, npm, Docker, Linux/Bash</p></div>
+          <div class="skill-card"><h3>Engineering</h3><p>Performance optimization, caching, lazy loading, code review, technical documentation, mentoring and debugging</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-label">Selected work</div>
+        <h2>Projects & systems.</h2>
+        <div class="projects">
+          <article class="project">
+            <div class="section-label">01</div>
+            <h3>Vue / Nuxt Modernization</h3>
+            <p>
+              Large-scale migration of a 12+ module production application from
+              Vue 2/Nuxt 2 to Vue 3/Nuxt 3, covering state management, routing,
+              middleware, plugins, UI libraries and third-party integrations.
+            </p>
+            <div class="tags"><span class="tag">Vue 3</span><span class="tag">Nuxt 3</span><span class="tag">Pinia</span><span class="tag">Vite</span></div>
+          </article>
+
+          <article class="project">
+            <div class="section-label">02</div>
+            <h3>Plugin & Extensibility Platform</h3>
+            <p>
+              Custom Actions and Modules that allow client developers to extend
+              the platform with custom logic, pages, reusable UI components,
+              API calls and CRUD workflows while integrating with global application services.
+            </p>
+            <div class="tags"><span class="tag">Vue 3</span><span class="tag">TypeScript</span><span class="tag">VitePress</span><span class="tag">REST</span></div>
+          </article>
+
+          <article class="project">
+            <div class="section-label">03</div>
+            <h3>Vue & Nuxt Tips</h3>
+            <p>
+              A technical resource covering practical Vue.js, Nuxt.js and
+              TypeScript techniques, published as an online developer resource.
+            </p>
+            <div class="tags"><span class="tag">Vue</span><span class="tag">Nuxt</span><span class="tag">TypeScript</span><span class="tag">Slidev</span></div>
+          </article>
+
+          <article class="project">
+            <div class="section-label">04</div>
+            <h3>AI-Assisted Plugin Creation</h3>
+            <p>
+              Collaborated with senior developers on AI-powered modules that
+              help developers create custom plugins from natural-language prompts,
+              contributing frontend integration and user experience.
+            </p>
+            <div class="tags"><span class="tag">Vue</span><span class="tag">AI</span><span class="tag">Plugins</span><span class="tag">UX</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-label">Contact</div>
+        <h2>Let's build something useful.</h2>
+        <p>
+          Open to remote frontend engineering opportunities focused on Vue.js,
+          Nuxt.js, TypeScript and modern web application development.
+        </p>
+        <div class="contact-links">
+          <a class="btn primary" href="mailto:aissamyekhlef@gmail.com">Email me</a>
+          <a class="btn" href="https://linkedin.com/in/aissam-yekhlef" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a class="btn" href="https://github.com/AissamYekhlef" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a class="btn" href="https://aissamyekhlef.github.io" target="_blank" rel="noreferrer">Portfolio ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 Aissam Yekhlef · Frontend Engineer</div>
+  </footer>
 </body>
-
 </html>
